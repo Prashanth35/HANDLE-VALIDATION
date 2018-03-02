@@ -1,0 +1,58 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		 xmlns:html="http://www.w3.org/1999/xhtml"  xmlns:l="sap.ui.layout">
+	
+      <Page title="{i18n>homePageTitle}">
+        <content>
+          <l:VerticalLayout
+        		class="sapUiContentPadding"
+        		width="100%">
+        		<l:content>
+        			<Label text="Enter Name" />
+        			<Input
+        				type="Text"
+        				placeholder="Enter Name ..."
+        				valueStateText="Name must not be empty. Maximum 10 characters."
+        				value="{
+        					path : '/name',
+        					type : 'sap.ui.model.type.String',
+        					constraints : {
+        						minLength: 1,
+        						maxLength: 10
+        					}
+        				}" />
+        				<Label text="Enter Pin Code" />
+        			<Input
+        				type="Text"
+        				placeholder="Enter pin code ..."
+        				valueStateText="Name must not be empty. Maximum 10 characters."
+        				value="{
+        					path : '/name',
+        					type : 'sap.ui.model.type.Integer',
+        					constraints : {
+        						minLength: 5,
+        						maxLength: 10
+        					}
+        				}" />
+
+        			<Label text="Select Time" />
+        			<TimePicker
+        				value="{ path: '/time', type: 'sap.ui.model.type.Time'}" />
+        
+        			<Label text="Enter AUD" />
+        			<Input
+        				value="{ path: '/value', type: 'sap.ui.model.type.Currency'}" 
+        				class="sapUiSmallMarginBottom" />
+        				
+        		</l:content>
+        	</l:VerticalLayout>
+        </content>
+        <footer>
+			<Toolbar>
+			  <Button icon="sap-icon://alert" type="Emphasized"
+						press="openMsgList"/>
+				<ToolbarSpacer/>
+			</Toolbar>
+		</footer>
+      </Page>
+
+</mvc:View>
